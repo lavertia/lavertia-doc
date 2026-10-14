@@ -1,0 +1,23 @@
+---
+import PortalLayout from '../../layouts/PortalLayout.astro';
+import registry from '../../data/plugins.json';
+type Plugin = { slug:string; name:string; description:string; author:string; repository:string; category:string; frameworks:string[]; installation?:string; documentation?:string };
+export function getStaticPaths() {
+  const plugins = registry as Plugin[];
+  return plugins.map(plugin => ({ params: { slug: plugin.slug }, props: { plugin } }));
+}
+const { plugin } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+<PortalLayout title={plugin.name} description={plugin.description}>
+  <a class="muted" href={base + 'plugins/'}>← Plugin directory</a>
+  <p class="eyebrow" style="margin-top:34px">{plugin.category}</p>
+  <h1 class="page-title">{plugin.name}</h1>
+  <p class="page-lead">{plugin.description}</p>
+  <div class="content-grid">
+    <div class="portal-card"><h2>Maintainer</h2><p>{plugin.author}</p><span class="kicker">Third-party extension</span></div>
+    <div class="portal-card"><h2>Frameworks</h2><p>{plugin.frameworks.join(', ')}</p><span class="kicker">Verify your versions</span></div>
+  </div>
+  <p class="notice" role="note">Third-party plugins are not automatically audited or endorsed by Lavertia. Read their source, verify version compatibility and evaluate security before installing.</p>
+  <p><a class="button primary" href={plugin.repository} target="_blank" rel="noopener noreferrer">View repository ↗</a> {plugin.documentation && <a class="button" href={plugin.documentation} target="_blank" rel="noopener noreferrer">Read plugin docs ↗</a>}</p>
+</PortalLayout>

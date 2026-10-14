@@ -1,0 +1,18 @@
+name: Documentation or blog proposal
+description: Suggest a guide, tutorial, article or documentation correction.
+title: "[Content] "
+body:
+  - type: dropdown
+    id: content_type
+    attributes:
+      label: Content type
+      options: [Documentation fix, New guide, Blog article, Release note]
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Outline and intended readers
+      description: Include relevant source code, Pull Requests and verified examples.
+    validations:
+      required: true

@@ -1,0 +1,51 @@
+name: Plugin submission
+description: Propose a community plugin for review and possible listing.
+title: "[Plugin] "
+labels: ["plugin-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Plugin listing is curated. Submission does not imply endorsement or an immediate listing.
+  - type: input
+    id: name
+    attributes:
+      label: Plugin name
+      placeholder: Example Toolkit
+    validations:
+      required: true
+  - type: input
+    id: repository
+    attributes:
+      label: Public HTTPS repository URL
+      placeholder: https://github.com/owner/repository
+    validations:
+      required: true
+  - type: input
+    id: package
+    attributes:
+      label: Composer or npm package identifier
+      placeholder: vendor/package
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Features and intended use
+      description: Explain what the plugin provides, and link to a working example if available.
+    validations:
+      required: true
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Compatibility
+      description: Specify Lavertia protocol, Laravel versions, React/Vue/Svelte support and tests.
+    validations:
+      required: true
+  - type: textarea
+    id: security
+    attributes:
+      label: License and security disclosure
+      description: Include license, security-policy URL and known caveats.
+    validations:
+      required: true

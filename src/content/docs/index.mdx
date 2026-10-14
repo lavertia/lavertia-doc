@@ -1,0 +1,48 @@
+---
+title: Lavertia
+description: PHP-defined components rendered by React, Vue and Svelte through Inertia.
+template: splash
+hero:
+  tagline: Laravel-first UI components. Your frontend, your choice.
+  actions:
+    - text: Get started
+      link: /lavertia-doc/start/installation/
+      icon: right-arrow
+      variant: primary
+    - text: Explore the architecture
+      link: /lavertia-doc/concepts/architecture/
+      variant: secondary
+---
+
+import { CardGrid, Card } from '@astrojs/starlight/components';
+
+:::caution[Early developer preview]
+Lavertia is under active development. Current APIs live on **draft feature branches** and can change. The website documents what is available and labels proposed features explicitly. Do not assume production support.
+:::
+
+## Compose once in PHP. Render with any Inertia frontend.
+
+<CardGrid>
+  <Card title="Component-first" icon="puzzle">
+    Place tables, forms, actions and infolists anywhere in your application—not only inside a Resource or a Panel.
+  </Card>
+  <Card title="Three frontends" icon="rocket">
+    One PHP component tree can be rendered by Vue 3, React 19 or Svelte 5 through an Inertia adapter.
+  </Card>
+  <Card title="Laravel native" icon="open-book">
+    Reuse policies, Eloquent, middleware, validation and authentication instead of reinventing your backend.
+  </Card>
+</CardGrid>
+
+## Find your way
+
+- [Installation and local development](/lavertia-doc/start/installation/)
+- [A first component page](/lavertia-doc/start/first-page/)
+- [Support, UI and Panels responsibilities](/lavertia-doc/concepts/architecture/)
+- [Tables: snapshots, Eloquent, filters, pagination](/lavertia-doc/packages/tables/)
+- [Forms and validation status](/lavertia-doc/packages/forms/)
+- [Plugins directory](/lavertia-doc/plugins/)
+- [Development blog](/lavertia-doc/blog/)
+
+**Source:** [Lavertia on GitHub](https://github.com/lavertia) · [Roadmap](/lavertia-doc/project/roadmap/) · [Contribute](/lavertia-doc/project/contributing/)
+
