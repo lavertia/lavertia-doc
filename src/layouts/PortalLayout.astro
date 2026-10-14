@@ -1,0 +1,47 @@
+---
+import '../styles/portal.css';
+
+interface Props { title: string; description: string; }
+const { title, description } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const to = (route: string) => base + route.replace(/^\/+/, '');
+const current = Astro.url.pathname;
+const nav = [
+  { name: 'Documentation', href: to('start/overview/') },
+  { name: 'Plugins', href: to('plugins/') },
+  { name: 'Blog', href: to('blog/') },
+];
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content={description} />
+  <meta name="theme-color" content="#080d15" />
+  <link rel="icon" type="image/svg+xml" href={to('favicon.svg')} />
+  <title>{title} · Lavertia</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href={to('')} aria-label="Lavertia documentation home"><span class="brand-mark">L</span><span>lavertia<span class="brand-sub"> / docs</span></span></a>
+      <nav aria-label="Primary navigation" class="desktop-nav">
+        {nav.map(item => <a href={item.href} aria-current={current.startsWith(item.href) ? 'page' : undefined}>{item.name}</a>)}
+      </nav>
+      <div class="nav-actions">
+        <a class="github-link" href="https://github.com/lavertia" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <details class="mobile-nav">
+          <summary aria-label="Open navigation">Menu</summary>
+          <div class="mobile-nav-links">{nav.map(item => <a href={item.href}>{item.name}</a>)}</div>
+        </details>
+      </div>
+    </div>
+  </header>
+  <main id="main" class="portal-main"><slot /></main>
+  <footer class="site-footer">
+    <div class="footer-inner"><span>© {new Date().getFullYear()} Lavertia · Experimental documentation</span><div><a href={to('project/status/')}>Project status</a><a href={to('project/contributing/')}>Contribute</a><a href="https://github.com/lavertia/lavertia-doc" target="_blank" rel="noopener noreferrer">Source ↗</a></div></div>
+  </footer>
+</body>
+</html>

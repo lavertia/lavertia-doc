@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import PortalLayout from '../../layouts/PortalLayout.astro';
+const base = import.meta.env.BASE_URL;
+const posts = (await getCollection('blog', ({data}) => !data.draft))
+  .sort((a,b) => b.data.date.getTime() - a.data.date.getTime());
+---
+<PortalLayout title="Blog & project updates" description="Engineering updates, release notes and tutorials from the Lavertia project.">
+  <p class="eyebrow">Notes from the team</p>
+  <h1 class="page-title">Engineering journal.</h1>
+  <p class="page-lead">Practical development updates, guides and design decisions from the Lavertia ecosystem. Draft work is identified as such.</p>
+  <div class="article-list">
+    {posts.map(post => (
+      <a href={base + 'blog/' + post.id + '/'} class="article-row">
+        <div class="row-between"><span class="kicker">{post.data.tags.join(' · ') || 'Update'}</span><time datetime={post.data.date.toISOString()} class="muted">{post.data.date.toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'})}</time></div>
+        <h2>{post.data.title}</h2>
+        <p>{post.data.description}</p>
+        <span class="muted">Read article →</span>
+      </a>
+    ))}
+  </div>
+  {posts.length === 0 && <div class="empty-state"><h2>No posts yet</h2><p>Updates will appear here after review.</p></div>}
+</PortalLayout>
