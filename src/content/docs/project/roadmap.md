@@ -8,6 +8,7 @@ description: Near-term milestones, release blockers and future extensions.
 - [x] PHP Component contracts and JSON-safe serialization.
 - [x] Initial Inertia renderer templates for React, Vue and Svelte.
 - [x] Basic Panel registration.
+- [x] Merge Support Protocol v1 into main.
 - [ ] Stable Composer release and a documented compatibility contract.
 
 ## 0.2 — Tables, forms and i18n (draft)
@@ -16,7 +17,9 @@ description: Near-term milestones, release blockers and future extensions.
 - [x] Experimental Eloquent source with explicit scoped query and authorization callback.
 - [x] Basic en/ar/fr translation and content RTL.
 - [ ] Complete Laravel/Pest/TypeScript/E2E QA across three applications.
-- [ ] Secure persisted form submissions and validation feedback.
+- [x] Draft Inertia form POST/PUT/PATCH submission and frontend validation feedback for React/Vue/Svelte.
+- [x] User-scoped Eloquent form persistence demo with authored feature tests.
+- [ ] Execute the new Laravel/Pest integration tests against all three apps and review browser/SSR behavior.
 - [ ] Extract Tables and Forms into their dedicated repositories.
 
 ## 0.3 — Panels as an optional product

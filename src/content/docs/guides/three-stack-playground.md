@@ -34,4 +34,6 @@ SESSION_COOKIE=lavertia_vue_session
 
 Use a separate name for React and Svelte. Distinct local domains via Herd/Valet provide stronger session and CSRF cookie isolation.
 
-The advanced feature preview is on [Playground PR #2](https://github.com/lavertia/playground/pull/2), including snapshot column controls, a scoped Eloquent example and partial en/ar/fr localization. It is **not merged or production verified**.
+The advanced feature preview is on [Playground PR #2](https://github.com/lavertia/playground/pull/2), including snapshot column controls, a scoped Eloquent example, initial en/ar/fr localization and a user-owned validated form persistence demo. It is **not merged or production verified**.
+
+The demo POST endpoint is `/admin/demo-profile`. It is protected by `auth` and writes only validated data to the signed-in user's profile relation. Run the new `LavertiaAdvancedTest.php` tests in each stack once private package dependencies are accessible to CI.
