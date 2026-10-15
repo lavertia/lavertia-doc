@@ -9,6 +9,7 @@ description: Near-term milestones, release blockers and future extensions.
 - [x] Initial Inertia renderer templates for React, Vue and Svelte.
 - [x] Basic Panel registration.
 - [x] Merge Support Protocol v1 into main.
+- [x] Golden JSON fixture, JSON Schema, cycle/depth/size regression tests with PHP 8.3/8.4 CI.
 - [ ] Stable Composer release and a documented compatibility contract.
 
 ## 0.2 — Tables, forms and i18n (draft)

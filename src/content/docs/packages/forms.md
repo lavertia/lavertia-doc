@@ -43,7 +43,7 @@ Route::patch('/account/profile', function (ProfileUpdateRequest $request) {
 
 The `ProfileUpdateRequest` is your application's Form Request: it must define validation rules and authorize the target record or tenant. Never trust a client-supplied model ID, and never use `$request->all()` for model updates. Add a Policy and database transaction when required.
 
-The Playground includes a working example storing `display_name`, `role`, `bio` and `notify` in a user-owned row, with feature tests covering authentication, invalid data, unauthorized user IDs and repeated updates. **Those feature tests have been authored but have not yet run in CI**, because private cross-repository dependencies require an authorized read token.
+The Playground includes a working example storing `display_name`, `role`, `bio` and `notify` in a user-owned row, protected by a `SaveDemoProfileRequest`, an explicit `LavertiaDemoProfilePolicy` and `auth` / `verified` middleware. Feature tests cover authentication, invalid data, unauthorized user IDs, POST/PUT/PATCH and repeated updates. **Those feature tests have been authored but have not yet run in CI**, because private cross-repository dependencies require an authorized read token.
 
 ## Current capability matrix
 

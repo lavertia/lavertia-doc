@@ -10,7 +10,7 @@ Current experimental primitives include:
 - Layouts: `Column`, `Row`, `Card`, `Section`, `PageHeader`.
 - Display: `Text`, `Stat`, `StatsGrid`, `Infolist`, `TextEntry`.
 - Tables: `Table`, `TextColumn`, `SelectFilter`.
-- Forms (preview): `Form`, `TextInput`, `Select`, `Textarea`, `Checkbox`.
+- Forms: `Form`, `TextInput`, `Select`, `Textarea`, `Checkbox`; optional Inertia submission to explicitly authorized Laravel routes.
 - Navigation: `Action` with a validated URL.
 
 ## Composing arbitrary layouts
@@ -35,4 +35,4 @@ A Table can appear in a Section, a Card, or a full page. No Resource subclass is
 
 The Support serializer bounds tree size and depth and rejects unserializable values. This is not a replacement for authorization: your Laravel code must scope Eloquent builders and check Policies before sending data.
 
-The component **types and APIs are still experimental** and should be versioned before a stable release.
+The component **types and APIs are still experimental**. See the [Component Protocol v1 guide](/lavertia-doc/concepts/component-protocol-v1/) for the checked JSON Schema, golden compatibility fixture and limits.
