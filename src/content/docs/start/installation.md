@@ -30,7 +30,7 @@ Checkout compatible branches:
 
 ```bash
 git -C support fetch origin
-git -C support switch feat/component-protocol-v1
+git -C support switch main
 
 git -C panels fetch origin
 git -C panels switch feat/tables-forms-i18n-v02

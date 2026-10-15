@@ -22,7 +22,7 @@ Laravel application
 
 | Repository | Responsibility | Current state |
 | --- | --- | --- |
-| [support](https://github.com/lavertia/support) | PHP contracts, composition, safe JSON serialization | Experimental implementation |
+| [support](https://github.com/lavertia/support) | PHP contracts, composition, safe JSON serialization | Merged to main (experimental) |
 | [panels](https://github.com/lavertia/panels) | Laravel routes, Page, panel configuration, generated adapters | Experimental implementation |
 | [tables](https://github.com/lavertia/tables) | Reusable data-table engine | Extraction planned |
 | [forms](https://github.com/lavertia/forms) | Reusable form engine | Extraction planned |
