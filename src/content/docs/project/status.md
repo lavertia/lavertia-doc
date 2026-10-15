@@ -7,11 +7,11 @@ Last reviewed: **2026-10-16**. The Support Protocol v1 implementation was merged
 
 | Area | State | Reference |
 | --- | --- | --- |
-| Immutable PHP component protocol | Merged to main (experimental) | [Support repository](https://github.com/lavertia/support) |
+| Immutable PHP component protocol | Merged to main; golden fixture and CI verified (experimental) | [Support PR #5](https://github.com/lavertia/support/pull/5) |
 | Basic Panel/Page and Starter Kit installation | Experimental | [Panels PR #4](https://github.com/lavertia/panels/pull/4) |
 | Filament-inspired visual primitives | Draft | [Panels PR #5](https://github.com/lavertia/panels/pull/5) |
 | Advanced table interactions and Eloquent | Draft | [Panels PR #6](https://github.com/lavertia/panels/pull/6) |
-| React/Vue/Svelte frontend builds | CI-tested in draft branches | [Panels Actions](https://github.com/lavertia/panels/actions) |
+| React/Vue/Svelte frontend builds and shared runtime checks | CI-tested in draft branches | [Panels Actions](https://github.com/lavertia/panels/actions) |
 | Laravel integration in all three apps | Incomplete / CI gated by private repo access | [Playground](https://github.com/lavertia/playground) |
 | Explicit form submit + Laravel Eloquent persistence demo | Implemented in draft, not integration-verified | [Forms guide](/lavertia-doc/packages/forms/) |
 | Repeaters, Wizards, file uploads | Planned | [Forms issue](https://github.com/lavertia/forms/issues/1) |

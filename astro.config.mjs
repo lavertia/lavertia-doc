@@ -27,6 +27,7 @@ export default defineConfig({
         { label: 'Fundamentals', items: [
           { slug: 'concepts/architecture' },
           { slug: 'concepts/components' },
+          { slug: 'concepts/component-protocol-v1' },
           { slug: 'concepts/frontend-adapters' },
           { slug: 'concepts/panels-and-auth' },
         ] },
