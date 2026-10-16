@@ -2,7 +2,7 @@
 
 Source for Lavertia's documentation, blog and curated plugin directory.
 
-**Website:** GitHub Pages, intended public URL: https://lavertia.github.io/lavertia-doc/ — **not verified live until Pages is enabled and deployment succeeds**.
+**Website:** https://lavertia.github.io/lavertia-doc/ — deployed through GitHub Actions; verify the current Pages deployment and actual URL when checking availability.
 
 Built on [Astro](https://astro.build/) and [Starlight](https://starlight.astro.build/). This is a static site: GitHub Pages serves HTML/CSS/JS, not a Laravel PHP runtime.
 
@@ -23,10 +23,9 @@ Open the local URL shown by `npm run dev`. To test the site using the root path 
 
 1. Open **Settings → Pages** for `lavertia/lavertia-doc`.
 2. Set **Build and deployment → Source: GitHub Actions**.
-3. Merge the docs website PR to `main`. The `.github/workflows/deploy.yml` workflow builds and publishes the `dist/` directory.
-4. Check the workflow and Pages settings for the **actual published URL**. For a public Pages project, it normally is `https://lavertia.github.io/lavertia-doc/`. Private publishing in an enterprise organization may use a unique Pages domain.
-5. Since the source repository is currently **private**, choose the desired Pages visibility and check your GitHub plan/organization settings. GitHub Pages is not available from private repositories on every plan. Making source public is an explicit repository-visibility decision.
-6. Do **not** claim the site is live until its URL opens successfully.
+3. Merge reviewed site content to `main`. The `.github/workflows/deploy.yml` workflow builds and publishes the `dist/` directory.
+4. Check the workflow and Pages settings for the **actual published URL**. For this project the configured base is `/lavertia-doc/`.
+5. Confirm the browser can load the published URL after deployment; the workflow's success alone does not verify end-user reachability.
 
 Changing to a custom domain? Update `SITE_URL` and `SITE_BASE=/` in the deployment environment and follow GitHub Pages DNS/CNAME instructions.
 
@@ -82,4 +81,4 @@ Do not submit the example as a real listing. A directory listing does not equal 
 
 Do not document roadmap features as implemented. The package integration is currently experimental; cross-check the code and accompanying tests for API claims. Source code for Lavertia lives in its dedicated GitHub repositories.
 
-License: MIT (website source). Names, logos and third-party materials retain their respective ownership.
+License: [MIT](LICENSE.md) (Lavertia website source). Names, logos and third-party materials retain their respective ownership. See [SECURITY.md](SECURITY.md) before reporting a security concern.
