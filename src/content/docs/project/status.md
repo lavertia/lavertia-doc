@@ -23,3 +23,7 @@ Last reviewed: **2026-10-16**. The Support Protocol v1 implementation was merged
 :::danger[Not production ready]
 There is no verified stable release, full three-stack Laravel/SSR/browser E2E suite, or formal backward-compatibility policy. Expect changing PHP methods and JSON component shapes.
 :::
+
+## Security and public-source readiness
+
+All code repositories undergo a full-Git-history secret scan before public visibility. A successful scan reduces risk but cannot prove that no secrets were ever committed. Historical Git commit-author emails also need maintainer review before publication. See the [public-release checklist](https://github.com/lavertia/lavertia/blob/main/docs/PUBLIC_RELEASE_CHECKLIST.md) and [release readiness issue](https://github.com/lavertia/lavertia/issues/3).

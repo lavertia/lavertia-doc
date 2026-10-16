@@ -27,3 +27,7 @@ See [Building plugins](/lavertia-doc/guides/plugins/) and the [Plugin directory]
 ## Quality gates
 
 Run `npm run lint:content` and `npm run build`. Include links to package PRs, tests and compatibility claims where relevant.
+
+## Security reports
+
+Do not open public issues or PRs containing vulnerabilities, live tokens or other personal data. Follow [the repository's private disclosure policy](https://github.com/lavertia/lavertia-doc/blob/main/SECURITY.md).
