@@ -4,10 +4,12 @@ description: Experimental Inertia form submissions, validation feedback and Lara
 ---
 
 :::caution[Draft v0.2 - not a stable Composer release]
-Form submission is implemented on [Panels PR #6](https://github.com/lavertia/panels/pull/6), with an Eloquent-backed [Playground PR #2](https://github.com/lavertia/playground/pull/2). React, Vue and Svelte adapters build successfully; Laravel end-to-end browser coverage remains pending.
+Form submission is implemented on [Panels PR #6](https://github.com/lavertia/panels/pull/6), with an Eloquent-backed [Playground PR #2](https://github.com/lavertia/playground/pull/2). Standalone PHP descriptors are staged in [Forms PR #2](https://github.com/lavertia/forms/pull/2) and the backwards-compatible bridge in [Panels PR #7](https://github.com/lavertia/panels/pull/7). These remain private drafts. React, Vue and Svelte adapters build successfully; Laravel end-to-end browser coverage remains pending.
 :::
 
 ## Composable server-bound form
+
+During the migration, prefer `Lavertia\\Forms\\Components\\Form`, `TextInput`, `Select`, `Textarea` and `Checkbox` when using the dedicated package. Existing `Lavertia\\Panels\\Components\\*` imports are preserved through tested-in-progress `class_alias()` shims. **Neither approach is a stable public Composer release.**
 
 ```php
 Form::make('profile')

@@ -4,10 +4,12 @@ description: Snapshot tables, draft Eloquent pagination, filters, sorting and co
 ---
 
 :::caution[Experimental, not a released table engine]
-Current Table code is still inside the `lavertia/panels` feature branch, before extraction into `lavertia/tables`. Check [PR #6](https://github.com/lavertia/panels/pull/6).
+The initial standalone Table engine is now staged in [Tables PR #2](https://github.com/lavertia/tables/pull/2), with [Panels PR #7](https://github.com/lavertia/panels/pull/7) providing backwards-compatible PHP aliases. Full Composer and Laravel consumer integration remain blocked by private repository access. The package is not a stable release.
 :::
 
 ## Snapshot data (client-side interactions)
+
+The future canonical import is `Lavertia\\Tables\\Components\\Table`, alongside `TextColumn` and `SelectFilter`. Existing Panels import paths remain usable in the experimental compatibility branch.
 
 ```php
 Table::make('members')

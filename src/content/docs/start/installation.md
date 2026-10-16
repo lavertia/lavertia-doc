@@ -73,3 +73,21 @@ php artisan test
 You must still register a Page class in `config/lavertia.php` and use your application's existing authentication before visiting its panel route.
 
 See [first page](/lavertia-doc/start/first-page/) and the [Playground guide](/lavertia-doc/guides/three-stack-playground/).
+
+## Experimental v0.2 canonical package migration (draft branches only)
+
+Forms and Tables source now has **private draft** Composer packages. To test the cross-package integration, clone `support`, `forms`, `tables`, `panels`, and `playground` as siblings. Use these branches:
+
+```bash
+git -C support switch main
+git -C forms switch feat/v02-canonical-descriptors
+git -C tables switch feat/v02-canonical-table-engine
+git -C panels switch feat/v02-package-integration
+git -C playground switch feat/v02-canonical-packages-integration
+```
+
+The experimental Panels version still uses a local Composer path alias of `0.1.0`, while Forms and Tables use local `0.2.0` aliases (these are **not published tags**). The Playground integration PR adds path repositories for all packages and a temporary Composer lock refresh in CI. **Regenerate and commit each Starter Kit's `composer.lock` before merging**; never hand-edit lock contents.
+
+While these repositories are private, `LAVERTIA_READ_TOKEN` must have restricted `Contents: Read` access to Support, Panels, Forms and Tables, configured as an Actions secret where the CI needs cross-repo checkout. Never commit or share the token.
+
+See [Panels migration PR #7](https://github.com/lavertia/panels/pull/7) and [Playground integration PR #4](https://github.com/lavertia/playground/pull/4).

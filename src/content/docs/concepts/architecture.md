@@ -24,8 +24,8 @@ Laravel application
 | --- | --- | --- |
 | [support](https://github.com/lavertia/support) | PHP contracts, composition, safe JSON serialization | Merged to main (experimental) |
 | [panels](https://github.com/lavertia/panels) | Laravel routes, Page, panel configuration, generated adapters | Experimental implementation |
-| [tables](https://github.com/lavertia/tables) | Reusable data-table engine | Extraction planned |
-| [forms](https://github.com/lavertia/forms) | Reusable form engine | Extraction planned |
+| [tables](https://github.com/lavertia/tables) | Reusable data-table engine | Independent implementation in draft PR #2; Panels compatibility pending |
+| [forms](https://github.com/lavertia/forms) | Reusable form engine | Independent implementation in draft PR #2; Panels compatibility pending |
 | [actions](https://github.com/lavertia/actions) | Server commands / action descriptors | Planned |
 | [infolists](https://github.com/lavertia/infolists) | Read-only detail components | Planned |
 | [ui](https://github.com/lavertia/ui) | Independent React/Vue/Svelte runtime adapters | Extraction planned |
