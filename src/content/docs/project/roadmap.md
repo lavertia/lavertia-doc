@@ -21,7 +21,8 @@ description: Near-term milestones, release blockers and future extensions.
 - [x] Draft Inertia form POST/PUT/PATCH submission and frontend validation feedback for React/Vue/Svelte.
 - [x] User-scoped Eloquent form persistence demo with authored feature tests.
 - [ ] Execute the new Laravel/Pest integration tests against all three apps and review browser/SSR behavior.
-- [ ] Extract Tables and Forms into their dedicated repositories.
+- [x] Create private standalone Forms and Tables implementations, CI checks and dependency-aware integration PRs.
+- [ ] Complete migration into Panels with tested backwards-compatible PHP class aliases and consumer Composer locks; merge only after the full PHP test matrix.
 
 ## 0.3 — Panels as an optional product
 
