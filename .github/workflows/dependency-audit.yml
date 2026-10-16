@@ -1,0 +1,28 @@
+name: Documentation dependency audit
+
+on:
+  push:
+    branches: [main, "feat/**"]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: '43 4 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  npm:
+    name: npm advisories
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Resolve the documentation dependency graph
+        run: npm install --no-audit --no-fund --ignore-scripts
+      - name: Audit all npm dependencies
+        run: npm audit --audit-level=high
