@@ -1,9 +1,9 @@
 ---
 title: Three-stack Playground
-description: Run Lavertia with Vue, React and Svelte in parallel.
+description: Run and test Lavertia with React, Vue and Svelte in parallel.
 ---
 
-The [Playground repository](https://github.com/lavertia/playground) contains three independent Laravel Inertia Starter Kit apps.
+The public [Playground repository](https://github.com/lavertia/playground) contains three independent Laravel 13 + Inertia 3 Starter Kit apps:
 
 ```text
 playground/
@@ -12,7 +12,9 @@ playground/
   svelte/
 ```
 
-After installing dependencies and configuring each app, start them on different ports:
+## Run locally
+
+Install dependencies separately for each app as described in [Installation](/lavertia-doc/start/installation/). Start their Laravel servers:
 
 ```bash
 (cd playground/vue && php artisan serve --port=8001)
@@ -20,20 +22,18 @@ After installing dependencies and configuring each app, start them on different 
 (cd playground/svelte && php artisan serve --port=8003)
 ```
 
-| App | Experimental dashboard |
-| --- | --- |
-| Vue | http://127.0.0.1:8001/admin/dashboard |
-| React | http://127.0.0.1:8002/admin/dashboard |
-| Svelte | http://127.0.0.1:8003/admin/dashboard |
+| Stack | Admin dashboard | Inventory demo |
+| --- | --- | --- |
+| Vue | http://127.0.0.1:8001/admin/dashboard | http://127.0.0.1:8001/admin/inventory/overview |
+| React | http://127.0.0.1:8002/admin/dashboard | http://127.0.0.1:8002/admin/inventory/overview |
+| Svelte | http://127.0.0.1:8003/admin/dashboard | http://127.0.0.1:8003/admin/inventory/overview |
 
-Each app has its own Laravel DB and authentication. When running them all on `127.0.0.1`, use **distinct session cookie names**, otherwise browser cookies can overwrite each other across ports:
+The v0.3 demo also includes a Model demo Page and explicitly registered Dashboard Widget. Sample data is illustrative; the separate v0.2 model example demonstrates authorized user-scoped Eloquent query and persisted form validation.
 
-```dotenv
-SESSION_COOKIE=lavertia_vue_session
-```
+Sign in to each Starter Kit separately. Cookies are shared across ports on the same hostname, so configure distinct `SESSION_COOKIE` values in each `.env`. Separate Valet/Herd domains provide stronger isolation.
 
-Use a separate name for React and Svelte. Distinct local domains via Herd/Valet provide stronger session and CSRF cookie isolation.
+## Verification
 
-The advanced feature preview is on [Playground PR #2](https://github.com/lavertia/playground/pull/2), including snapshot column controls, a scoped Eloquent example, initial en/ar/fr localization and a user-owned validated form persistence demo. It is **not merged or production verified**.
+The [v0.3 Playground PR #12](https://github.com/lavertia/playground/pull/12) is **merged to main**, with Pest tests on all three stacks, frontend TypeScript and production builds, and PostgreSQL and config/route caching checks. Real InterNACHI/modular module installation is tested in [Panels PR #11](https://github.com/lavertia/panels/pull/11).
 
-The demo POST endpoint is `/admin/demo-profile`. It is protected by `auth` and writes only validated data to the signed-in user's profile relation. Run the new `LavertiaAdvancedTest.php` tests in each stack once private package dependencies are accessible to CI.
+These are experimental source demos, **not a stable or audited production release**.

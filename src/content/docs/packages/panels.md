@@ -1,41 +1,43 @@
 ---
 title: Panels package
-description: Optional Laravel pages, panel routes, starter kit renderer installer and future standalone shell.
+description: Laravel Inertia Pages, navigation, dashboard Widgets and modular discovery.
 ---
 
-**Repository:** [lavertia/panels](https://github.com/lavertia/panels)
+**Repository:** [lavertia/panels](https://github.com/lavertia/panels) · **Status:** public development alpha, code merged to main; no stable tag.
 
-**Status:** Draft, experimental. [Panel UI PR](https://github.com/lavertia/panels/pull/5) and [advanced table PR](https://github.com/lavertia/panels/pull/6).
+`lavertia/panels` now provides:
 
-The current package provides:
-- `Panel::make($id)`, path, middleware and Page registration.
-- A base invokable `Page` which produces Inertia's `lavertia/page`.
-- A `lavertia:install --stack=react|vue|svelte` renderer installer.
-- Prototype component implementations which will be extracted to dedicated packages.
+- `Panel::make($id)` with URL prefix, middleware and Page registration.
+- `Panel::discoverPages()` and module Service Provider `PanelRegistry::discoverPages()`.
+- `NavigationItem` entries registered per Panel with route verification, groups, ordering and optional Laravel Gate abilities.
+- `DashboardWidget`, `DashboardPage`, `PanelRegistry::discoverWidgets()` and explicit widget registration.
+- Shared `lavertia/page` Component Protocol v1 Inertia payload with optional `navigation` metadata.
+- React, Vue, Svelte renderer installer via `php artisan lavertia:install --stack=react|vue|svelte`.
 
-## Auth is not a property of the UI shell
-
-Panels should reuse authentication already configured by the host Laravel app. Multiple Panels can share an `auth` middleware/guard and one login page.
+## Basic Panel
 
 ```php
 'panels' => [
     'admin' => [
         'path' => 'admin',
         'middleware' => ['web', 'auth'],
-        'pages' => [\App\Lavertia\Pages\DashboardPage::class],
-    ],
-    'staff' => [
-        'path' => 'staff',
-        'middleware' => ['web', 'auth', 'can:access-staff'],
-        'pages' => [\App\Lavertia\Pages\StaffPage::class],
+        'pages' => [\Lavertia\Panels\Pages\DashboardPage::class],
+        'navigation' => [
+            ['slug' => 'dashboard', 'label' => 'Dashboard'],
+        ],
+        'dashboard_widgets' => [],
     ],
 ],
 ```
 
-This is illustrative configuration, not a substitute for correctly defined Gates and model Policies.
+Use **plain arrays** in `config/lavertia.php` for navigation so `php artisan config:cache` works. Add Widgets and links dynamically through Service Providers when working with Composer-backed modules.
 
-## Roadmap
+## Authorization
 
-Standalone layouts, navigation/resource registry, plugins, configurable identity providers and per-panel authorization are **not yet implemented**.
+Laravel middleware protects Page routes; hidden NavigationItem links alone never grant or revoke permission. Check explicit Gates/Policies for features, scope all Eloquent queries by organization/tenant and use `DashboardWidget::canView()` for per-request visibility.
 
-See [Panels and auth](/lavertia-doc/concepts/panels-and-auth/) for their intended boundaries.
+## Next
+
+Resources, Relation Managers, standalone auth screens, cluster-style organization and a public Plugin SDK are **not implemented yet**.
+
+See the [v0.3 Modular Panels guide](/lavertia-doc/guides/modular-panels/) for working examples and verified CI references.

@@ -42,6 +42,7 @@ export default defineConfig({
           { slug: 'guides/localization' },
           { slug: 'guides/eloquent-security' },
           { slug: 'guides/three-stack-playground' },
+          { slug: 'guides/modular-panels' },
           { slug: 'guides/plugins' },
         ] },
         { label: 'Project', items: [
