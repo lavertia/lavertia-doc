@@ -1,29 +1,26 @@
 ---
 title: Project status
-description: Evidence-based feature availability and release readiness.
+description: Verified package functionality and remaining release gates.
 ---
 
-Last reviewed: **2026-10-16**. The Support Protocol v1 implementation was merged into `main` on October 16. Panels and Playground remain draft branches pending integration testing.
+Last reviewed: **19 October 2026**. All seven Lavertia source repositories are **public**; that does not mean a stable package release exists.
 
-| Area | State | Reference |
+| Area | Implemented and verified | Reference |
 | --- | --- | --- |
-| Immutable PHP component protocol | Merged to main; golden fixture and CI verified (experimental) | [Support PR #5](https://github.com/lavertia/support/pull/5) |
-| Basic Panel/Page and Starter Kit installation | Experimental | [Panels PR #4](https://github.com/lavertia/panels/pull/4) |
-| Filament-inspired visual primitives | Draft | [Panels PR #5](https://github.com/lavertia/panels/pull/5) |
-| Old Panels PHP namespaces / canonical package bridge | Compatibility shims on draft branch, not merged | [Panels PR #7](https://github.com/lavertia/panels/pull/7) |
-| Advanced table interactions and Eloquent | Panels draft; standalone package in [Tables PR #2](https://github.com/lavertia/tables/pull/2) | [Panels PR #6](https://github.com/lavertia/panels/pull/6) |
-| React/Vue/Svelte frontend builds and shared runtime checks | CI-tested in draft branches | [Panels Actions](https://github.com/lavertia/panels/actions) |
-| Laravel integration in all three apps | Tests authored but skipped: private cross-repository checkout not configured | [Playground PR #4](https://github.com/lavertia/playground/pull/4) |
-| Explicit form submit + Laravel persistence demo | Panels draft; standalone package in [Forms PR #2](https://github.com/lavertia/forms/pull/2) | [Forms guide](/lavertia-doc/packages/forms/) |
-| Repeaters, Wizards, file uploads | Planned | [Forms issue](https://github.com/lavertia/forms/issues/1) |
-| External API TableSource | Planned | [Tables issue](https://github.com/lavertia/tables/issues/1) |
-| Standalone Panel Auth shell / OIDC | Planned | [Panel authentication design](/lavertia-doc/concepts/panels-and-auth/) |
-| Plugin marketplace/registry runtime | Planned | [Plugin guide](/lavertia-doc/guides/plugins/) |
+| Component Protocol v1 | Merged to Support main; golden fixtures, serialization limits and CI | [Support](https://github.com/lavertia/support) |
+| Panel/Page routing and auth middleware | Merged, Laravel 13 integration verified | [Panels](https://github.com/lavertia/panels) |
+| Canonical Forms/Tables | Merged to public packages, included in Playground v0.2 | [Playground PR #9](https://github.com/lavertia/playground/pull/9) |
+| React/Vue/Svelte | Three-stack Laravel/Pest, TypeScript and production builds successful | [Playground CI](https://github.com/lavertia/playground/actions) |
+| SQLite/PostgreSQL persistence | Guarded model demo and automated PostgreSQL integration verified | [v0.2 CI](https://github.com/lavertia/playground/actions/runs/39191592220) |
+| PHP development auto refresh | Vite full-browser refresh on app and module PHP changes | [Playground PR #11](https://github.com/lavertia/playground/pull/11) |
+| Module-owned Pages | PSR-4 discovery with installed InterNACHI/modular, secure Panel routes and cache | [Panels PR #9](https://github.com/lavertia/panels/pull/9) |
+| Navigation + Dashboard Widgets | v0.3 alpha merged; Gate-filtered, Panel-scoped; tested after config/route caching | [Panels PR #11](https://github.com/lavertia/panels/pull/11) |
+| v0.3 Starter Kit showcase | Navigation/Inventory/Model demo Pages and Widget in three stacks, CI verified | [Playground PR #12](https://github.com/lavertia/playground/pull/12) |
+| Resources / Relation Managers | Planned, not implemented | [v0.3 plan](https://github.com/lavertia/lavertia/issues/6) |
+| Standalone Auth UI / OIDC and Plugin SDK | Planned, not implemented | [Auth concepts](/lavertia-doc/concepts/panels-and-auth/) |
 
 :::danger[Not production ready]
-There is no verified stable release, full three-stack Laravel/SSR/browser E2E suite, or formal backward-compatibility policy. Expect changing PHP methods and JSON component shapes.
+No supported stable tags or public Packagist release have been approved. Browser-level end-to-end QA, accessibility, mobile/RTL reviews, version compatibility and maintainer security/asset reviews are still pending. Source merges and automated CI do not certify production readiness.
 :::
 
-## Security and public-source readiness
-
-All code repositories undergo a full-Git-history secret scan before public visibility. A successful scan reduces risk but cannot prove that no secrets were ever committed. Historical Git commit-author emails also need maintainer review before publication. See the [public-release checklist](https://github.com/lavertia/lavertia/blob/main/docs/PUBLIC_RELEASE_CHECKLIST.md) and [release readiness issue](https://github.com/lavertia/lavertia/issues/3).
+See the [public release readiness issue](https://github.com/lavertia/lavertia/issues/3) and [v0.3 roadmap](https://github.com/lavertia/lavertia/issues/6).

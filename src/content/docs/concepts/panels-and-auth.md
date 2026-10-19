@@ -7,7 +7,7 @@ A **Panel** is a group of pages with a URL prefix and middleware. Authentication
 
 ## Implemented now
 
-The current `lavertia/panels` package registers a Panel's `path`, `middleware` and `pages`. It can reuse the Laravel Starter Kit's existing `web` session guard and login page:
+The current `lavertia/panels` package registers a Panel's `path`, `middleware` and `pages`, and also provides an opt-in v0.3 Navigation Registry and Dashboard Widgets. It can reuse the Laravel Starter Kit's existing `web` session guard and login page:
 
 ```php
 'panels' => [
@@ -24,7 +24,7 @@ Authorization remains an application responsibility. Protect routes with middlew
 ## Planned modes — not implemented
 
 - **Starter Kit Mode:** keep existing app layout, sessions, Fortify/WorkOS and profile routes.
-- **Standalone Panel Mode:** Lavertia-provided navigation, shell, themes and optional auth screens.
+- **Standalone Panel Mode:** navigation and widget foundation exists; a complete standalone shell, themes and auth screens are still planned.
 - **Shared Auth:** one Laravel guard/login/profile for multiple panels.
 - **Central OIDC:** external Identity Provider and local app sessions; design must explicitly handle login return paths and logout scope.
 - **Isolated Auth:** opt-in dedicated guards for sensitive interfaces.

@@ -21,7 +21,7 @@ return [
 ];
 ```
 
-This illustrates the compositional direction. Many of these components currently reside in the draft `lavertia/panels` package and will be extracted to their own packages.
+This illustrates the compositional direction. These primitives are now available in public experimental Panels, Forms and Tables source packages; no supported stable package tags have been issued.
 
 ## What it is not
 

@@ -1,41 +1,40 @@
 ---
 title: Roadmap
-description: Near-term milestones, release blockers and future extensions.
+description: Implemented milestones and what remains before stable releases.
 ---
 
-## 0.1 — Component foundation (prototype)
+## v0.1 — Component foundation (source merged)
 
-- [x] PHP Component contracts and JSON-safe serialization.
-- [x] Initial Inertia renderer templates for React, Vue and Svelte.
-- [x] Basic Panel registration.
-- [x] Merge Support Protocol v1 into main.
-- [x] Golden JSON fixture, JSON Schema, cycle/depth/size regression tests with PHP 8.3/8.4 CI.
-- [ ] Stable Composer release and a documented compatibility contract.
+- [x] PHP Component contracts, immutable composition and JSON-safe serialization.
+- [x] Inertia Page/Panel routing, Laravel Starter Kit renderer installation.
+- [x] React, Vue and Svelte component runtime and golden fixtures.
+- [ ] Approved Composer version tags, stable API contract and public package release.
 
-## 0.2 — Tables, forms and i18n (draft)
+## v0.2 — Forms, Tables and i18n (source merged)
 
-- [x] Prototype filter/toggle/column-order UI and bounded client-side pagination.
-- [x] Experimental Eloquent source with explicit scoped query and authorization callback.
-- [x] Basic en/ar/fr translation and content RTL.
-- [ ] Complete Laravel/Pest/TypeScript/E2E QA across three applications.
-- [x] Draft Inertia form POST/PUT/PATCH submission and frontend validation feedback for React/Vue/Svelte.
-- [x] User-scoped Eloquent form persistence demo with authored feature tests.
-- [ ] Execute the new Laravel/Pest integration tests against all three apps and review browser/SSR behavior.
-- [x] Create private standalone Forms and Tables implementations, CI checks and dependency-aware integration PRs.
-- [ ] Complete migration into Panels with tested backwards-compatible PHP class aliases and consumer Composer locks; merge only after the full PHP test matrix.
+- [x] Canonical public Forms and Tables source packages.
+- [x] User-scoped Eloquent pagination, filters, sorting and column controls.
+- [x] Laravel Policies, validation and guarded persisted form demonstration.
+- [x] en/ar/fr content support with RTL.
+- [x] Three-stack Laravel 13 tests and frontend builds, SQLite/PostgreSQL integration.
+- [x] Vite full-browser reload for app and module PHP files.
+- [ ] Browser E2E, responsive and keyboard/accessibility manual QA before supported release.
 
-## 0.3 — Panels as an optional product
+## v0.3 — Modular Panels (first slice merged)
 
-- [ ] Standalone Panel layout and navigation registry.
-- [ ] Shared, isolated and centralized authentication adapters.
-- [ ] Resource / relation manager / widgets and extension points.
-- [ ] Full frontend adapter parity.
+- [x] Laravel Modular PSR-4 Page discovery and route precedence fix.
+- [x] Per-Panel Navigation Registry, Gate filtering, active links and grouped ordering.
+- [x] Composable Dashboard Widgets, discovery from modules and opt-in Dashboard Page.
+- [x] React/Vue/Svelte navigation showcase and real integration tests including route cache.
+- [ ] Full Filament-inspired CRUD Resource/Page API and Eloquent Policy/tenant checks.
+- [ ] Relation Managers and Resource-driven Navigation.
+- [ ] Standalone Panel Auth UI and optional shared/external auth adapters.
 
-## Community ecosystem
+## Ecosystem and release
 
-- [x] Static documentation portal, posts and curated plugin directory scaffolding.
-- [ ] Stable Plugin SDK, package discovery/version compatibility.
-- [ ] Public verified extensions and moderation workflows.
-- [ ] Release notes, package versioning and upgrade guides.
+- [x] Static documentation portal and curated plugin directory scaffolding.
+- [ ] Stable Plugin SDK and compatibility policy.
+- [ ] Public stable Composer package tags and reproducible upgrade guides.
+- [ ] Accessibility, security, 320px/mobile, Arabic RTL and dark-mode release QA.
 
-See GitHub issues in [Tables](https://github.com/lavertia/tables/issues), [Forms](https://github.com/lavertia/forms/issues) and [Playground](https://github.com/lavertia/playground/issues).
+Follow [v0.3 implementation issue](https://github.com/lavertia/lavertia/issues/6) and [release blockers](https://github.com/lavertia/lavertia/issues/3).
