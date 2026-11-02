@@ -3,7 +3,7 @@ title: Project status
 description: Verified package functionality and remaining release gates.
 ---
 
-Last reviewed: **19 October 2026**. All seven Lavertia source repositories are **public**; that does not mean a stable package release exists.
+Last reviewed: **2 November 2026**. All seven Lavertia source repositories are **public**; that does not mean a stable package release exists.
 
 | Area | Implemented and verified | Reference |
 | --- | --- | --- |
@@ -16,7 +16,10 @@ Last reviewed: **19 October 2026**. All seven Lavertia source repositories are *
 | Module-owned Pages | PSR-4 discovery with installed InterNACHI/modular, secure Panel routes and cache | [Panels PR #9](https://github.com/lavertia/panels/pull/9) |
 | Navigation + Dashboard Widgets | v0.3 alpha merged; Gate-filtered, Panel-scoped; tested after config/route caching | [Panels PR #11](https://github.com/lavertia/panels/pull/11) |
 | v0.3 Starter Kit showcase | Navigation/Inventory/Model demo Pages and Widget in three stacks, CI verified | [Playground PR #12](https://github.com/lavertia/playground/pull/12) |
-| Resources / Relation Managers | Planned, not implemented | [v0.3 plan](https://github.com/lavertia/lavertia/issues/6) |
+| Resource GET pages and Eloquent Policies | Draft P0-06 branch, not merged/stable | [Panels PR #36](https://github.com/lavertia/panels/pull/36) |
+| Page reuse and parameterized Resource routes | Draft P0-07 branch, not merged/stable | [Panels PR #37](https://github.com/lavertia/panels/pull/37) |
+| ListRecords tabs, labels, counts, query filters | Draft P0-08 implementation, under CI/browser review | [Panels PR #38](https://github.com/lavertia/panels/pull/38) |
+| CRUD writes, Relation Managers, nested/singular and Resource search | Planned, not released | [Resource guide](/lavertia-doc/resources/overview/) |
 | Standalone Auth UI / OIDC and Plugin SDK | Planned, not implemented | [Auth concepts](/lavertia-doc/concepts/panels-and-auth/) |
 
 :::danger[Not production ready]

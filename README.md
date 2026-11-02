@@ -33,6 +33,7 @@ Changing to a custom domain? Update `SITE_URL` and `SITE_BASE=/` in the deployme
 
 ```text
 src/content/docs/        Starlight Markdown/MDX docs
+src/content/docs/resources/  Detailed Resource and Page guides, with draft availability warnings
 src/content/blog/        Posts (title, description, date, author, tags)
 src/data/plugins.json    Curated plugin registry; initially empty
 src/pages/blog/          Static posts listing and detail routes
