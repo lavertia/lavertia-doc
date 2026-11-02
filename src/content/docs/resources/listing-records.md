@@ -106,7 +106,7 @@ Automatic async/deferred badge loading, as described in Filament, is **not imple
 
 Table state lives in URL keys prefixed with `lvt_<table-name>_`. `lavertia/tables` supports pagination, registered Select filters, sorting, visibility controls and searchable columns. On tab click, Lavertia preserves safe search/filter/sort parameters and resets pagination.
 
-The three frontends follow normal Inertia Links (no full browser reload) and preserve scroll. A future enhancement can use `router.reload({ only: ['lavertia'] })` or deferred props when the server payload is structured to permit correct partial reloads; the P0-08 implementation currently uses standard Inertia GET visits.
+The three frontends use Inertia Links with partial reloads (`only: ['lavertia']`), preserve current state and scroll, and avoid refetching unrelated shared Panel props. Laravel still evaluates the authorized Page payload on each visit. Future work may defer expensive tab badges separately rather than computing all badge counts for every tab switch.
 
 ## Header actions and customization
 
