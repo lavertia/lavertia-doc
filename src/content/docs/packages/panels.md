@@ -36,8 +36,23 @@ Use **plain arrays** in `config/lavertia.php` for navigation so `php artisan con
 
 Laravel middleware protects Page routes; hidden NavigationItem links alone never grant or revoke permission. Check explicit Gates/Policies for features, scope all Eloquent queries by organization/tenant and use `DashboardWidget::canView()` for per-request visibility.
 
+## Resource development preview
+
+Resource GET routes and authorization are being developed in
+[Panels PR #36](https://github.com/lavertia/panels/pull/36) and
+[Panels PR #37](https://github.com/lavertia/panels/pull/37).
+[Panels PR #38](https://github.com/lavertia/panels/pull/38) adds
+the Filament-inspired `ListRecords::getTabs()` abstraction.
+
+These APIs are **not included in a tagged stable release or guaranteed on main**.
+Use the [Resources preview documentation](/lavertia-doc/resources/overview/)
+only with compatible feature branches. Write-side CRUD actions, Relation
+Managers, nested Resources and Resource global search remain planned.
+
 ## Next
 
-Resources, Relation Managers, standalone auth screens, cluster-style organization and a public Plugin SDK are **not implemented yet**.
+Standalone authentication previews and Theme SDK development live on
+stacked feature branches. Full CRUD, Relation Managers, production-ready
+OIDC and the public Plugin SDK are **not available as stable releases**.
 
 See the [v0.3 Modular Panels guide](/lavertia-doc/guides/modular-panels/) for working examples and verified CI references.
